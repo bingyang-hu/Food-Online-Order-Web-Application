@@ -3,6 +3,9 @@ package com.example.onlineorder.controller;
 import org.springframework.stereotype.Controller;
 import com.example.onlineorder.entity.Customer;
 import org.springframework.http.HttpStatus;
+import com.example.onlineorder.service.CustomerService;
+import org.springframework.beans.factory.annotation.Autowired;
+
 
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,10 +15,13 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 @Controller
 public class SignUpController {
+    @Autowired
+    private CustomerService customerService;
+
     @RequestMapping(value = "/signup", method = RequestMethod.POST)
     @ResponseStatus(value = HttpStatus.CREATED)
     public void signUp(@RequestBody Customer customer) {
-        
+        customerService.signUp(customer);
     }
 
 }
