@@ -1,7 +1,18 @@
 package com.example.onlineorder.entity;
+import javax.persistence.*;
+import java.io.Serializable;
 
-public class Customer {
+
+@Entity
+@Table(name = "customers")
+
+public class Customer  implements Serializable{
+
+    private static final long serialVersionUID = 2652327633296064143L;
+
+    @Id
     private String email;
+
     private String firstName;
     private String lastName;
     private String password;
