@@ -24,6 +24,18 @@ public class MenuItem implements Serializable {
 
     private String imageUrl;
 
+    public Restaurant getRestaurant() {
+        return restaurant;
+    }
+
+    public void setRestaurant(Restaurant restaurant) {
+        this.restaurant = restaurant;
+    }
+
+    @ManyToOne//
+    @JsonIgnore
+    private Restaurant restaurant;
+
     public int getId() {
         return id;
     }
