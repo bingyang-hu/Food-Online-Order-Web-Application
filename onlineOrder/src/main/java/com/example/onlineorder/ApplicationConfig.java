@@ -15,7 +15,7 @@ public class ApplicationConfig {
 
     @Bean(name = "sessionFactory")
     public LocalSessionFactoryBean sessionFactory() {
-        String PAKAGE_NAME = "";
+        String PAKAGE_NAME = "com.example.onlineorder.entity";
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
         sessionFactory.setDataSource(dataSource());
         sessionFactory.setPackagesToScan(PAKAGE_NAME);
@@ -25,9 +25,9 @@ public class ApplicationConfig {
 
     @Bean(name = "dataSource")
     public DataSource dataSource() {
-        String RDS_ENDPOINT = "";
-        String USERNAME = "";
-        String PASSWORD = "";
+        String RDS_ENDPOINT = "onlineorder.cpgprtrsiz51.us-east-1.rds.amazonaws.com";
+        String USERNAME = "admin";
+        String PASSWORD = "hbyxbtx1";
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
         dataSource.setUrl("jdbc:mysql://" + RDS_ENDPOINT + ":3306/onlineOrder?createDatabaseIfNotExist=true&serverTimezone=UTC");

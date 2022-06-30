@@ -1,3 +1,3 @@
 com\example\onlineorder\ApplicationConfig.class
-com\example\onlineorder\service\CustomerService.class
 com\example\onlineorder\dao\CustomerDao.class
+com\example\onlineorder\service\CustomerService.class
